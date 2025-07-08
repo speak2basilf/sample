@@ -149,11 +149,11 @@ const Placements: React.FC = () => {
             <div className="relative">
               <div className="flex animate-slide-infinite space-x-8">
                 {[...companies, ...companies].map((company, index) => (
-                  <div key={index} className="flex-shrink-0 w-48 h-24 flex items-center justify-center p-4 bg-white/60 backdrop-blur-md border border-white/30 rounded-2xl hover:bg-white/80 hover:scale-105 transition-all duration-300 shadow-lg">
+                  <div key={index} className="flex-shrink-0 w-56 h-28 flex flex-col items-center justify-center p-4 bg-white/60 backdrop-blur-md border border-white/30 rounded-2xl hover:bg-white/80 hover:scale-105 transition-all duration-300 shadow-lg">
                     <img 
                       src={company.logo} 
                       alt={company.name}
-                      className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                      className="max-w-full h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300 mb-2"
                       onError={(e) => {
                         // Fallback to text if logo fails to load
                         const target = e.currentTarget as HTMLImageElement;
@@ -164,7 +164,7 @@ const Placements: React.FC = () => {
                         }
                       }}
                     />
-                    <span className="text-gray-700 font-medium text-sm text-center hidden font-poppins">{company.name}</span>
+                    <span className="text-gray-700 font-medium text-xs text-center font-poppins">{company.name}</span>
                   </div>
                 ))}
               </div>

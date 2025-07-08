@@ -132,6 +132,10 @@ const Header: React.FC = () => {
       handleTabClick(section, `#${section}`);
     } else if (section === 'accreditations') {
       navigate('/accreditations');
+      // Ensure smooth scroll to top after navigation
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
     } else {
       // For other about sections, navigate to dedicated pages (to be created later)
       console.log(`Navigate to ${section} page`);

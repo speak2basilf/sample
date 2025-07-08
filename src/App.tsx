@@ -6,7 +6,6 @@ import About from './components/About';
 import Admission from './components/Admission';
 import Courses from './components/Courses';
 import Placements from './components/Placements';
-import CareerOpportunities from './components/CareerOpportunities';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -28,9 +27,7 @@ const HomePage: React.FC = () => {
         <About />
         <Admission />
         <Courses />
-        <CareerOpportunities />
         <Placements />
-        <Testimonials />
         <Contact />
       </main>
       <Footer />

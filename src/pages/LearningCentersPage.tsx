@@ -19,9 +19,9 @@ const LearningCentersPage: React.FC = () => {
       facilities: ['Modern Classrooms', 'Computer Lab', 'Library', 'Student Lounge'],
       timings: 'Mon-Sat: 9:00 AM - 7:00 PM',
       facilityImages: [
-        '/Facility1.jpeg',
+        '/Facility 5 copy.jpeg',
         '/Facility 3.jpeg',
-        '/Facility 5.jpeg'
+        '/Facility 4.jpeg'
       ]
     },
     {
@@ -40,9 +40,9 @@ const LearningCentersPage: React.FC = () => {
       facilities: ['Executive Offices', 'Conference Rooms', 'Training Halls', 'Reception'],
       timings: 'Mon-Sat: 9:00 AM - 6:00 PM',
       facilityImages: [
-        '/Facilty 6.jpeg',
+        '/Facilty 6 copy.jpeg',
         '/Facility 7.jpeg',
-        '/Facility1.jpeg'
+        '/Facility 3 copy.jpeg'
       ]
     }
   ];

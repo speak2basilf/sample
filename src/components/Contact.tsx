@@ -63,12 +63,12 @@ const Contact: React.FC = () => {
       email: 'admin@cliniglobal.com'
     },
     {
-      city: 'Hyderabad',
+      city: 'Bengaluru',
       address: 'CliniGlobal Research Institute',
-      fullAddress: '303, Meghamala Apartment Road, Kumar Basti, Srinivasa Nagar, Ameerpet',
-      pincode: 'Hyderabad, Telangana 500082',
-      phone: '+919052992967 / +917093794447',
-      email: 'hyderabad@cliniglobal.com'
+      fullAddress: '125, 7th Cross Rd, Off Bannerghatta Rd, Dollar Layout, BTM 2nd Stage',
+      pincode: 'Bengaluru – 560076, Karnataka',
+      phones: ['+917093794447', '+919629752834'],
+      email: 'bangalore@cliniglobal.com'
     }
   ];
 
