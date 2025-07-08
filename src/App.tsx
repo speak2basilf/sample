@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
 import CRMCourse from './pages/CRMCourse';
 import MedicalCodingCourse from './pages/MedicalCodingCourse';
+import ClinicalSASCourse from './pages/ClinicalSASCourse';
 import PlacementsPage from './pages/PlacementsPage';
 import AccreditationsPage from './pages/AccreditationsPage';
 import LearningCentersPage from './pages/LearningCentersPage';
@@ -98,9 +99,7 @@ function App() {
           } />
           <Route path="/courses/clinical-sas" element={
             <CoursePageLayout>
-              <div className="min-h-screen flex items-center justify-center">
-                <h1 className="text-4xl font-bold text-gray-900">Clinical SAS Course - Coming Soon</h1>
-              </div>
+              <ClinicalSASCourse />
             </CoursePageLayout>
           } />
           <Route path="/courses/bioinformatics" element={
