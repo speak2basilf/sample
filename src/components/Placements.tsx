@@ -3,9 +3,24 @@ import { Building, TrendingUp, Users, Award, Heart, Star, Sparkles } from 'lucid
 
 const Placements: React.FC = () => {
   const companies = [
-    'Pfizer', 'Novartis', 'Johnson & Johnson', 'Roche', 'GSK', 'AstraZeneca',
-    'Merck', 'Bristol Myers Squibb', 'Eli Lilly', 'Sanofi', 'Bayer', 'Boehringer Ingelheim',
-    'Teva', 'Gilead Sciences', 'Biogen', 'Amgen', 'Regeneron', 'Vertex Pharmaceuticals'
+    { name: 'Pfizer', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Pfizer-Logo.png' },
+    { name: 'Novartis', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Novartis-Logo.png' },
+    { name: 'Johnson & Johnson', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Johnson-Johnson-Logo.png' },
+    { name: 'Roche', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Roche-Logo.png' },
+    { name: 'GSK', logo: 'https://logos-world.net/wp-content/uploads/2020/11/GlaxoSmithKline-Logo.png' },
+    { name: 'AstraZeneca', logo: 'https://logos-world.net/wp-content/uploads/2020/11/AstraZeneca-Logo.png' },
+    { name: 'Merck', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Merck-Logo.png' },
+    { name: 'Bristol Myers Squibb', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Bristol-Myers-Squibb-Logo.png' },
+    { name: 'Eli Lilly', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Eli-Lilly-Logo.png' },
+    { name: 'Sanofi', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Sanofi-Logo.png' },
+    { name: 'Bayer', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Bayer-Logo.png' },
+    { name: 'Boehringer Ingelheim', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Boehringer-Ingelheim-Logo.png' },
+    { name: 'Teva', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Teva-Logo.png' },
+    { name: 'Gilead Sciences', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Gilead-Sciences-Logo.png' },
+    { name: 'Biogen', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Biogen-Logo.png' },
+    { name: 'Amgen', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Amgen-Logo.png' },
+    { name: 'Regeneron', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Regeneron-Logo.png' },
+    { name: 'Vertex Pharmaceuticals', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Vertex-Logo.png' }
   ];
 
   const placementStats = [
@@ -29,7 +44,7 @@ const Placements: React.FC = () => {
     },
     {
       icon: Award,
-      number: '₹8.5L',
+      number: '₹18L',
       label: 'Highest Package',
       color: 'indigo'
     }
@@ -127,16 +142,28 @@ const Placements: React.FC = () => {
           </div>
         </div>
 
-        {/* Partner Companies */}
+        {/* Partner Companies with Moving Effect */}
         <div className="text-center">
           <h3 className="text-3xl font-bold text-gray-900 mb-12">Our Placement Partners</h3>
-          <div className="bg-white/40 backdrop-blur-lg border border-white/20 rounded-3xl p-8 shadow-lg">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-              {companies.map((company, index) => (
-                <div key={index} className="flex items-center justify-center p-4 bg-white/30 backdrop-blur-md border border-white/20 rounded-2xl hover:bg-white/50 hover:scale-105 transition-all duration-300">
-                  <span className="text-gray-700 font-medium text-sm text-center">{company}</span>
-                </div>
-              ))}
+          <div className="bg-white/40 backdrop-blur-lg border border-white/20 rounded-3xl p-8 shadow-lg overflow-hidden">
+            <div className="relative">
+              <div className="flex animate-slide-infinite">
+                {[...companies, ...companies].map((company, index) => (
+                  <div key={index} className="flex-shrink-0 w-48 h-24 mx-4 flex items-center justify-center p-4 bg-white/50 backdrop-blur-md border border-white/20 rounded-2xl hover:bg-white/70 transition-all duration-300">
+                    <img 
+                      src={company.logo} 
+                      alt={company.name}
+                      className="max-w-full max-h-full object-contain"
+                      onError={(e) => {
+                        // Fallback to text if logo fails to load
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.nextElementSibling!.style.display = 'block';
+                      }}
+                    />
+                    <span className="text-gray-700 font-medium text-sm text-center hidden">{company.name}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

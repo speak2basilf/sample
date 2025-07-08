@@ -5,24 +5,38 @@ const AccreditationsPage: React.FC = () => {
   const accreditations = [
     {
       name: 'ISO 9001:2015',
-      logo: '/logo 2.png',
+      logo: '/logo 2 copy.png',
       description: 'International Organization for Standardization - Quality Management Systems',
       details: 'Demonstrates our commitment to quality management and continuous improvement in educational services.',
       category: 'Quality Management'
     },
     {
       name: 'IAO',
-      logo: '/logo 1.png', 
+      logo: '/logo 1 copy.png', 
       description: 'International Accreditation Organization',
       details: 'Global recognition for excellence in healthcare education and training standards.',
       category: 'International Accreditation'
     },
     {
       name: 'LSSSDC',
-      logo: '/logo 3.png',
+      logo: '/logo 5.jpeg',
       description: 'Life Sciences Sector Skill Development Council',
       details: 'Government of India recognition for skill development in life sciences and healthcare sector.',
       category: 'Skill Development'
+    },
+    {
+      name: 'CICRE',
+      logo: '/logo 4 copy.jpeg',
+      description: 'Council for Clinical Research & Education',
+      details: 'Specialized accreditation for clinical research education and training programs.',
+      category: 'Clinical Research Education'
+    },
+    {
+      name: 'Asian International University',
+      logo: '/logo 3 copy.png',
+      description: 'Asian International University - Manipur',
+      details: 'Academic partnership for degree and diploma programs in healthcare education.',
+      category: 'Academic Partnership'
     }
   ];
 

@@ -392,7 +392,7 @@ const CRMCourse: React.FC = () => {
                     <span>Access LMS</span>
                   </button>
                   <button className="w-full bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors font-poppins">
-                    Enroll Now - ₹65,000
+                    Enroll Now
                   </button>
                 </div>
                 <button className="w-full border border-white/30 text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors flex items-center justify-center font-poppins">
@@ -664,7 +664,7 @@ const CRMCourse: React.FC = () => {
                   <span>Access LMS</span>
                 </button>
                 <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors text-lg">
-                  Apply Now - ₹65,000
+                  Enroll Now
                 </button>
               </div>
               <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition-colors text-lg">

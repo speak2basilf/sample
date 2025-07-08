@@ -271,14 +271,6 @@ const Header: React.FC = () => {
                 )}
               </div>
 
-              <button 
-                onClick={() => handleTabClick('admission', '#admission')}
-                className={getTabClasses('admission')}
-              >
-                Admission
-                {getActiveIndicator('admission')}
-              </button>
-              
               {/* Courses Dropdown */}
               <div className="relative dropdown-container">
                 <button 
@@ -294,21 +286,6 @@ const Header: React.FC = () => {
                 </button>
                 {isCoursesOpen && (
                   <div className="absolute top-full left-0 mt-2 w-80 bg-white/95 backdrop-blur-lg border border-white/20 rounded-2xl shadow-2xl py-2 z-50 animate-in slide-in-from-top-2 duration-200">
-                    <div className="px-4 py-2 mx-2">
-                      <div className="font-semibold text-gray-800 mb-2">Clinical Research</div>
-                      <button 
-                        onClick={() => handleCourseNavigation('/courses/pgdcr')}
-                        className="block w-full text-left px-2 py-1 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50/50 transition-all duration-200 rounded-lg"
-                      >
-                        PG Diploma in Clinical Research (PGDCR)
-                      </button>
-                      <button 
-                        onClick={() => handleCourseNavigation('/courses/adcr')}
-                        className="block w-full text-left px-2 py-1 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50/50 transition-all duration-200 rounded-lg"
-                      >
-                        Advanced Diploma in Clinical Research (ADCR)
-                      </button>
-                    </div>
                     <button 
                       onClick={() => handleCourseNavigation('/courses/clinical-sas')}
                       className="block w-full text-left px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 transition-all duration-200 rounded-lg mx-2"
@@ -342,6 +319,14 @@ const Header: React.FC = () => {
                   </div>
                 )}
               </div>
+
+              <button 
+                onClick={() => handleTabClick('admission', '#admission')}
+                className={getTabClasses('admission')}
+              >
+                Admission
+                {getActiveIndicator('admission')}
+              </button>
               
               <button 
                 onClick={() => navigate('/placements')}
@@ -377,6 +362,14 @@ const Header: React.FC = () => {
                   </div>
                 )}
               </div>
+
+              <button 
+                onClick={() => handleTabClick('contact', '#contact')}
+                className={getTabClasses('contact')}
+              >
+                Contact
+                {getActiveIndicator('contact')}
+              </button>
             </div>
           </div>
           
@@ -395,18 +388,9 @@ const Header: React.FC = () => {
             </button>
           </div>
           
-          {/* Phone and Enroll Now section */}
+          {/* LMS and Enroll Now section */}
           <div className="hidden lg:flex items-center ml-auto">
             <div className="flex items-center space-x-3 xl:space-x-4">
-              {/* Contact with proper spacing */}
-              <button 
-                onClick={() => handleTabClick('contact', '#contact')}
-                className={getTabClasses('contact')}
-              >
-                Contact
-                {getActiveIndicator('contact')}
-              </button>
-              
               {/* LMS Button */}
               <button 
                 onClick={() => window.open('http://cliniglobal.testpress.in', '_blank')}
@@ -455,7 +439,6 @@ const Header: React.FC = () => {
                   About Us
                 </button>
                 <div className="pl-4 space-y-1">
-                  <button onClick={() => handleAboutNavigation('our-story')} className="block w-full text-left px-2 py-1 text-sm text-gray-600 hover:text-blue-600 hover:bg-white/50 rounded transition-all duration-200">Our Story/Mission</button>
                   <span className="block w-full text-left px-2 py-1 text-sm text-gray-400 cursor-not-allowed rounded">Our Story/Mission</span>
                   <span className="block w-full text-left px-2 py-1 text-sm text-gray-400 cursor-not-allowed rounded">Leadership/Team</span>
                   <button onClick={() => handleAboutNavigation('accreditations')} className="block w-full text-left px-2 py-1 text-sm text-gray-600 hover:text-blue-600 hover:bg-white/50 rounded transition-all duration-200">Accreditations & Recognitions</button>
@@ -464,15 +447,6 @@ const Header: React.FC = () => {
                 </div>
               </div>
 
-              <button 
-                onClick={() => handleTabClick('admission', '#admission')}
-                className={`block w-full text-left px-3 py-2 font-medium rounded-lg transition-all duration-200 ${
-                  activeTab === 'admission' ? 'text-blue-600 bg-blue-50/50' : 'text-gray-700 hover:text-blue-600 hover:bg-white/50'
-                }`}
-              >
-                Admission
-              </button>
-              
               {/* Mobile Courses Section */}
               <div className="px-3 py-2">
                 <button 
@@ -484,7 +458,6 @@ const Header: React.FC = () => {
                   Courses
                 </button>
                 <div className="pl-4 space-y-1">
-                  <button onClick={() => handleCourseNavigation('/courses/crm')} className="block w-full text-left px-2 py-1 text-sm text-gray-600 hover:text-blue-600 hover:bg-white/50 rounded transition-all duration-200">PG Diploma in Clinical Research</button>
                   <button onClick={() => handleCourseNavigation('/courses/clinical-sas')} className="block w-full text-left px-2 py-1 text-sm text-gray-600 hover:text-blue-600 hover:bg-white/50 rounded transition-all duration-200">Advanced Diploma in Clinical SAS</button>
                   <button onClick={() => handleCourseNavigation('/courses/bioinformatics')} className="block w-full text-left px-2 py-1 text-sm text-gray-600 hover:text-blue-600 hover:bg-white/50 rounded transition-all duration-200">Advanced Diploma in Bioinformatics</button>
                   <button onClick={() => handleCourseNavigation('/courses/medical-coding')} className="block w-full text-left px-2 py-1 text-sm text-gray-600 hover:text-blue-600 hover:bg-white/50 rounded transition-all duration-200">Advanced Diploma in Medical Coding</button>
@@ -492,6 +465,15 @@ const Header: React.FC = () => {
                   <button onClick={() => handleCourseNavigation('/courses/mba')} className="block w-full text-left px-2 py-1 text-sm text-gray-600 hover:text-blue-600 hover:bg-white/50 rounded transition-all duration-200">MBA in Healthcare Management</button>
                 </div>
               </div>
+
+              <button 
+                onClick={() => handleTabClick('admission', '#admission')}
+                className={`block w-full text-left px-3 py-2 font-medium rounded-lg transition-all duration-200 ${
+                  activeTab === 'admission' ? 'text-blue-600 bg-blue-50/50' : 'text-gray-700 hover:text-blue-600 hover:bg-white/50'
+                }`}
+              >
+                Admission
+              </button>
               
               <button 
                 onClick={() => navigate('/placements')}
@@ -513,18 +495,19 @@ const Header: React.FC = () => {
                   <a href="#faq" className="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600 hover:bg-white/50 rounded transition-all duration-200">FAQ</a>
                 </div>
               </div>
+
+              <button 
+                onClick={() => handleTabClick('contact', '#contact')}
+                className={`block w-full text-left px-3 py-2 font-medium rounded-lg transition-all duration-200 ${
+                  activeTab === 'contact' ? 'text-blue-600 bg-blue-50/50' : 'text-gray-700 hover:text-blue-600 hover:bg-white/50'
+                }`}
+              >
+                Contact
+              </button>
               
               {/* Enhanced mobile Enroll Now button */}
               <div className="pt-4 mt-4 border-t border-gray-200">
                 <div className="space-y-3">
-                  <button 
-                    onClick={() => handleTabClick('contact', '#contact')}
-                    className={`w-full text-left px-3 py-2 font-medium rounded-lg transition-all duration-200 ${
-                      activeTab === 'contact' ? 'text-blue-600 bg-blue-50/50' : 'text-gray-700 hover:text-blue-600 hover:bg-white/50'
-                    }`}
-                  >
-                    Contact
-                  </button>
                   <button 
                     onClick={() => window.open('http://cliniglobal.testpress.in', '_blank')}
                     className="w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-[#1BA7C9] to-[#1BA7C9]/90 text-white px-6 py-3 rounded-full hover:from-[#1BA7C9]/90 hover:to-[#1BA7C9]/80 hover:scale-105 transition-all duration-300 shadow-lg relative z-10 font-medium font-poppins"
