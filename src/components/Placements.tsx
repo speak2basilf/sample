@@ -3,24 +3,24 @@ import { Building, TrendingUp, Users, Award, Heart, Star, Sparkles } from 'lucid
 
 const Placements: React.FC = () => {
   const companies = [
-    { name: 'Pfizer', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Pfizer-Logo.png' },
-    { name: 'Novartis', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Novartis-Logo.png' },
-    { name: 'Johnson & Johnson', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Johnson-Johnson-Logo.png' },
-    { name: 'Roche', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Roche-Logo.png' },
-    { name: 'GSK', logo: 'https://logos-world.net/wp-content/uploads/2020/11/GlaxoSmithKline-Logo.png' },
-    { name: 'AstraZeneca', logo: 'https://logos-world.net/wp-content/uploads/2020/11/AstraZeneca-Logo.png' },
-    { name: 'Merck', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Merck-Logo.png' },
-    { name: 'Bristol Myers Squibb', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Bristol-Myers-Squibb-Logo.png' },
-    { name: 'Eli Lilly', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Eli-Lilly-Logo.png' },
-    { name: 'Sanofi', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Sanofi-Logo.png' },
-    { name: 'Bayer', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Bayer-Logo.png' },
-    { name: 'Boehringer Ingelheim', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Boehringer-Ingelheim-Logo.png' },
-    { name: 'Teva', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Teva-Logo.png' },
-    { name: 'Gilead Sciences', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Gilead-Sciences-Logo.png' },
-    { name: 'Biogen', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Biogen-Logo.png' },
-    { name: 'Amgen', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Amgen-Logo.png' },
-    { name: 'Regeneron', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Regeneron-Logo.png' },
-    { name: 'Vertex Pharmaceuticals', logo: 'https://logos-world.net/wp-content/uploads/2020/11/Vertex-Logo.png' }
+    { name: 'Pfizer', logo: 'https://1000logos.net/wp-content/uploads/2017/02/Pfizer-Logo.png' },
+    { name: 'Novartis', logo: 'https://1000logos.net/wp-content/uploads/2017/02/Novartis-Logo.png' },
+    { name: 'Johnson & Johnson', logo: 'https://1000logos.net/wp-content/uploads/2017/06/Johnson-Johnson-Logo.png' },
+    { name: 'Roche', logo: 'https://1000logos.net/wp-content/uploads/2017/02/Roche-Logo.png' },
+    { name: 'GSK', logo: 'https://1000logos.net/wp-content/uploads/2017/02/GSK-Logo.png' },
+    { name: 'AstraZeneca', logo: 'https://1000logos.net/wp-content/uploads/2017/02/AstraZeneca-Logo.png' },
+    { name: 'Merck', logo: 'https://1000logos.net/wp-content/uploads/2017/02/Merck-Logo.png' },
+    { name: 'Bristol Myers Squibb', logo: 'https://1000logos.net/wp-content/uploads/2017/02/Bristol-Myers-Squibb-Logo.png' },
+    { name: 'Eli Lilly', logo: 'https://1000logos.net/wp-content/uploads/2017/02/Eli-Lilly-Logo.png' },
+    { name: 'Sanofi', logo: 'https://1000logos.net/wp-content/uploads/2017/02/Sanofi-Logo.png' },
+    { name: 'Bayer', logo: 'https://1000logos.net/wp-content/uploads/2017/02/Bayer-Logo.png' },
+    { name: 'Boehringer Ingelheim', logo: 'https://1000logos.net/wp-content/uploads/2017/02/Boehringer-Ingelheim-Logo.png' },
+    { name: 'Teva', logo: 'https://1000logos.net/wp-content/uploads/2017/02/Teva-Logo.png' },
+    { name: 'Gilead Sciences', logo: 'https://1000logos.net/wp-content/uploads/2017/02/Gilead-Sciences-Logo.png' },
+    { name: 'Biogen', logo: 'https://1000logos.net/wp-content/uploads/2017/02/Biogen-Logo.png' },
+    { name: 'Amgen', logo: 'https://1000logos.net/wp-content/uploads/2017/02/Amgen-Logo.png' },
+    { name: 'Abbott', logo: 'https://1000logos.net/wp-content/uploads/2017/02/Abbott-Logo.png' },
+    { name: 'Medtronic', logo: 'https://1000logos.net/wp-content/uploads/2017/02/Medtronic-Logo.png' }
   ];
 
   const placementStats = [
@@ -145,26 +145,34 @@ const Placements: React.FC = () => {
         {/* Partner Companies with Moving Effect */}
         <div className="text-center">
           <h3 className="text-3xl font-bold text-gray-900 mb-12">Our Placement Partners</h3>
-          <div className="bg-white/40 backdrop-blur-lg border border-white/20 rounded-3xl p-8 shadow-lg overflow-hidden">
+          <div className="bg-white/40 backdrop-blur-lg border border-white/20 rounded-3xl p-8 shadow-lg overflow-hidden relative">
             <div className="relative">
-              <div className="flex animate-slide-infinite">
+              <div className="flex animate-slide-infinite space-x-8">
                 {[...companies, ...companies].map((company, index) => (
-                  <div key={index} className="flex-shrink-0 w-48 h-24 mx-4 flex items-center justify-center p-4 bg-white/50 backdrop-blur-md border border-white/20 rounded-2xl hover:bg-white/70 transition-all duration-300">
+                  <div key={index} className="flex-shrink-0 w-48 h-24 flex items-center justify-center p-4 bg-white/60 backdrop-blur-md border border-white/30 rounded-2xl hover:bg-white/80 hover:scale-105 transition-all duration-300 shadow-lg">
                     <img 
                       src={company.logo} 
                       alt={company.name}
-                      className="max-w-full max-h-full object-contain"
+                      className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                       onError={(e) => {
                         // Fallback to text if logo fails to load
-                        e.currentTarget.style.display = 'none';
-                        e.currentTarget.nextElementSibling!.style.display = 'block';
+                        const target = e.currentTarget as HTMLImageElement;
+                        target.style.display = 'none';
+                        const textElement = target.nextElementSibling as HTMLElement;
+                        if (textElement) {
+                          textElement.style.display = 'block';
+                        }
                       }}
                     />
-                    <span className="text-gray-700 font-medium text-sm text-center hidden">{company.name}</span>
+                    <span className="text-gray-700 font-medium text-sm text-center hidden font-poppins">{company.name}</span>
                   </div>
                 ))}
               </div>
             </div>
+            
+            {/* Gradient overlays for smooth infinite scroll effect */}
+            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white/40 to-transparent pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white/40 to-transparent pointer-events-none"></div>
           </div>
         </div>
 

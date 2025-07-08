@@ -286,6 +286,21 @@ const Header: React.FC = () => {
                 </button>
                 {isCoursesOpen && (
                   <div className="absolute top-full left-0 mt-2 w-80 bg-white/95 backdrop-blur-lg border border-white/20 rounded-2xl shadow-2xl py-2 z-50 animate-in slide-in-from-top-2 duration-200">
+                    <div className="px-4 py-2 mx-2">
+                      <div className="font-semibold text-gray-800 mb-2">Clinical Research</div>
+                      <button 
+                        onClick={() => handleCourseNavigation('/courses/pgdcr')}
+                        className="block w-full text-left px-2 py-1 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50/50 transition-all duration-200 rounded-lg"
+                      >
+                        PG Diploma in Clinical Research (PGDCR)
+                      </button>
+                      <button 
+                        onClick={() => handleCourseNavigation('/courses/adcr')}
+                        className="block w-full text-left px-2 py-1 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50/50 transition-all duration-200 rounded-lg"
+                      >
+                        Advanced Diploma in Clinical Research (ADCR)
+                      </button>
+                    </div>
                     <button 
                       onClick={() => handleCourseNavigation('/courses/clinical-sas')}
                       className="block w-full text-left px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 transition-all duration-200 rounded-lg mx-2"
@@ -458,6 +473,9 @@ const Header: React.FC = () => {
                   Courses
                 </button>
                 <div className="pl-4 space-y-1">
+                  <div className="px-2 py-1 text-sm font-medium text-gray-800">Clinical Research</div>
+                  <button onClick={() => handleCourseNavigation('/courses/pgdcr')} className="block w-full text-left px-4 py-1 text-sm text-gray-600 hover:text-blue-600 hover:bg-white/50 rounded transition-all duration-200">PG Diploma in Clinical Research (PGDCR)</button>
+                  <button onClick={() => handleCourseNavigation('/courses/adcr')} className="block w-full text-left px-4 py-1 text-sm text-gray-600 hover:text-blue-600 hover:bg-white/50 rounded transition-all duration-200">Advanced Diploma in Clinical Research (ADCR)</button>
                   <button onClick={() => handleCourseNavigation('/courses/clinical-sas')} className="block w-full text-left px-2 py-1 text-sm text-gray-600 hover:text-blue-600 hover:bg-white/50 rounded transition-all duration-200">Advanced Diploma in Clinical SAS</button>
                   <button onClick={() => handleCourseNavigation('/courses/bioinformatics')} className="block w-full text-left px-2 py-1 text-sm text-gray-600 hover:text-blue-600 hover:bg-white/50 rounded transition-all duration-200">Advanced Diploma in Bioinformatics</button>
                   <button onClick={() => handleCourseNavigation('/courses/medical-coding')} className="block w-full text-left px-2 py-1 text-sm text-gray-600 hover:text-blue-600 hover:bg-white/50 rounded transition-all duration-200">Advanced Diploma in Medical Coding</button>

@@ -449,14 +449,32 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
 .animate-slide-infinite {
-  animation: slide-infinite 15s linear infinite;
+  animation: slide-infinite 30s linear infinite;
 }
 
 .animate-slide-infinite:hover {
   animation-play-state: paused;
+}
+
+/* Enhanced placement partners animation */
+.placement-partners-container {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
 }
