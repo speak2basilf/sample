@@ -27,7 +27,6 @@ const HomePage: React.FC = () => {
         <About />
         <Admission />
         <Courses />
-        <Placements />
         <Contact />
       </main>
       <Footer />

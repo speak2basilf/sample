@@ -136,6 +136,10 @@ const Header: React.FC = () => {
       setTimeout(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }, 100);
+      // Ensure smooth scroll to top after navigation
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
     } else {
       // For other about sections, navigate to dedicated pages (to be created later)
       console.log(`Navigate to ${section} page`);
