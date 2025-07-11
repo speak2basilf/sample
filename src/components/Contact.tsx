@@ -51,15 +51,14 @@ const Contact: React.FC = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          Name: formData.name,
-          Email: formData.email,
-          Phone: formData.phone,
-          'Interested Course': formData.course,
-          Message: formData.message,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          course: formData.course,
+          message: formData.message,
           formType: 'general_enquiry',
           timestamp: new Date().toISOString(),
           source: 'website_contact_form',
-          // Additional fields for better tracking
           userAgent: navigator.userAgent,
           referrer: document.referrer || 'direct'
         }),
