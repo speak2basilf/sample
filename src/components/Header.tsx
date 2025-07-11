@@ -282,7 +282,7 @@ const Header: React.FC = () => {
               {/* Courses Dropdown */}
               <div className="relative dropdown-container">
                 <button 
-                  onClick={handleCoursesDropdown}
+                  onClick={() => navigate('/courses')}
                   className={`${getTabClasses('courses')} flex items-center whitespace-nowrap text-sm xl:text-base`}
                 >
                   Courses
@@ -473,7 +473,7 @@ const Header: React.FC = () => {
               {/* Mobile Courses Section */}
               <div className="px-3 py-2">
                 <button 
-                  onClick={() => handleTabClick('courses', '#courses')}
+                  onClick={() => navigate('/courses')}
                   className={`font-medium mb-2 ${
                     activeTab === 'courses' ? 'text-blue-600' : 'text-gray-700'
                   }`}
