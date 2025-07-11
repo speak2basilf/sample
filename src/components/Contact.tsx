@@ -42,27 +42,36 @@ const Contact: React.FC = () => {
     setSubmitStatus('idle');
     
     try {
+      // Log the data being sent for debugging
+      console.log('Form data being sent:', formData);
+      
       const response = await fetch('https://hook.eu2.make.com/q4oedzjganbsk9c972mlj39p63kij5gi', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          course: formData.course,
-          message: formData.message,
+          Name: formData.name,
+          Email: formData.email,
+          Phone: formData.phone,
+          'Interested Course': formData.course,
+          Message: formData.message,
           formType: 'general_enquiry',
           timestamp: new Date().toISOString(),
-          source: 'website_contact_form'
+          source: 'website_contact_form',
+          // Additional fields for better tracking
+          userAgent: navigator.userAgent,
+          referrer: document.referrer || 'direct'
         }),
       });
 
+      console.log('Response status:', response.status);
+      
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', phone: '', course: '', message: '' });
       } else {
+        console.error('Response not ok:', response.statusText);
         setSubmitStatus('error');
       }
     } catch (error) {
