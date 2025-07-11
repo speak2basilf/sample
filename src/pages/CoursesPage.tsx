@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BookOpen, Clock, Users, Award, ArrowRight, GraduationCap, Target, TrendingUp } from 'lucide-react';
+import { BookOpen, Clock, Users, Award, ArrowRight, GraduationCap, Target, TrendingUp, Star } from 'lucide-react';
 import { GlowingEffect } from '../components/ui/glowing-effect';
 
 const CoursesPage: React.FC = () => {
@@ -10,11 +10,12 @@ const CoursesPage: React.FC = () => {
     {
       id: 'pgdcr',
       title: 'PG Diploma in Clinical Research',
+      subtitle: 'Master clinical trial management, GCP guidelines, and regulatory compliance for pharmaceutical industry leadership.',
       duration: '12 Months',
       mode: 'Online / Classroom',
       students: '500+ Enrolled',
       rating: '4.9',
-      description: 'Comprehensive training in clinical trial management, GCP guidelines, and regulatory compliance for pharmaceutical industry.',
+      image: 'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
       features: [
         'Live Interactive Sessions',
         'Real Project Experience', 
@@ -29,11 +30,12 @@ const CoursesPage: React.FC = () => {
     {
       id: 'adcr',
       title: 'Advanced Diploma in Clinical Research',
+      subtitle: 'Fast-track 6-month program for immediate entry into clinical research with comprehensive hands-on training.',
       duration: '6 Months',
       mode: 'Online / Classroom',
       students: '350+ Enrolled',
       rating: '4.8',
-      description: 'Intensive 6-month program designed for fast-track entry into clinical research with hands-on training.',
+      image: 'https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
       features: [
         'Industry-Ready Training',
         'GCP & ICH Guidelines',
@@ -47,11 +49,12 @@ const CoursesPage: React.FC = () => {
     {
       id: 'clinical-sas',
       title: 'Advanced Diploma in Clinical SAS',
+      subtitle: 'Master SAS programming for clinical data analysis, statistical reporting, and regulatory submissions.',
       duration: '6 Months',
       mode: 'Online / Classroom',
       students: '400+ Enrolled',
       rating: '4.8',
-      description: 'Master SAS programming for clinical data analysis, statistical reporting, and regulatory submissions.',
+      image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
       features: [
         'SAS Programming',
         'Statistical Analysis',
@@ -65,11 +68,12 @@ const CoursesPage: React.FC = () => {
     {
       id: 'medical-coding',
       title: 'Advanced Diploma in Medical Coding',
+      subtitle: 'Master ICD-10, CPT, and HCPCS coding systems for accurate healthcare documentation and billing.',
       duration: '6 Months',
       mode: 'Online / Classroom',
       students: '450+ Enrolled',
       rating: '4.8',
-      description: 'Master medical coding systems including ICD-10, CPT, and HCPCS for healthcare documentation.',
+      image: 'https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
       features: [
         'ICD-10 Coding',
         'CPT Procedures',
@@ -83,11 +87,12 @@ const CoursesPage: React.FC = () => {
     {
       id: 'ai-ml',
       title: 'PG Diploma in AI & ML Healthcare',
+      subtitle: 'Cutting-edge artificial intelligence and machine learning applications in healthcare and medical research.',
       duration: '12 Months',
       mode: 'Online / Classroom',
       students: '300+ Enrolled',
       rating: '4.8',
-      description: 'Expertise in artificial intelligence and machine learning applications in healthcare and medical research.',
+      image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
       features: [
         'Machine Learning',
         'Healthcare AI',
@@ -101,11 +106,12 @@ const CoursesPage: React.FC = () => {
     {
       id: 'mba',
       title: 'MBA in Healthcare Management',
+      subtitle: 'Comprehensive business administration program focused on healthcare industry leadership and strategic management.',
       duration: '24 Months',
       mode: 'Weekend Batches',
       students: '150+ Enrolled',
       rating: '4.9',
-      description: 'Comprehensive business administration program focused on healthcare industry management and leadership.',
+      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
       features: [
         'Healthcare Strategy',
         'Operations Management',
@@ -186,11 +192,11 @@ const CoursesPage: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Courses Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {courses.map((course, index) => (
             <div
               key={course.id}
-              className="group relative bg-white/60 backdrop-blur-lg rounded-3xl overflow-hidden border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
+              className="group relative bg-white/60 backdrop-blur-lg rounded-3xl overflow-hidden border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer h-80"
               onClick={() => handleCourseClick(course)}
             >
               {/* Glowing Effect */}
@@ -203,70 +209,98 @@ const CoursesPage: React.FC = () => {
                 borderWidth={2}
               />
               
+              {/* Split Layout */}
+              <div className="flex h-full">
+                {/* Left Half - Image */}
+                <div className="w-1/2 relative overflow-hidden">
+                  <img 
+                    src={course.image} 
+                    alt={course.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/20"></div>
+                </div>
+
+                {/* Right Half - Content */}
+                <div className={`w-1/2 p-6 flex flex-col justify-between bg-gradient-to-br ${getColorClasses(course.color).replace('hover:', '').replace('from-', 'from-').replace('to-', 'to-').split(' ')[0]} relative`}>
+                  {/* Background Pattern */}
+                  <div className="absolute inset-0 opacity-10">
+                    <div className="absolute top-4 right-4 w-20 h-20 border-2 border-white rounded-full"></div>
+                    <div className="absolute bottom-4 left-4 w-16 h-16 border-2 border-white rounded-full"></div>
+                  </div>
+
+                  <div className="relative z-10">
+                    {/* Header */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-10 h-10 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center">
+                        <BookOpen className="text-white" size={20} />
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <Star className="text-yellow-300 fill-current" size={14} />
+                        <span className="text-white text-sm font-medium">{course.rating}</span>
+                      </div>
+                    </div>
+
+                    {/* Popular Badge */}
+                    {course.popular && (
+                      <div className="inline-block bg-yellow-400 text-gray-900 px-3 py-1 rounded-full text-xs font-bold mb-3">
+                        Most Popular
+                      </div>
+                    )}
+
+                    {/* Title */}
+                    <h3 className="text-lg font-bold text-white mb-2 leading-tight">
+                      {course.title}
+                    </h3>
+
+                    {/* Subtitle */}
+                    <p className="text-white/90 text-sm mb-4 leading-relaxed line-clamp-3">
+                      {course.subtitle}
+                    </p>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      <span className="bg-white/20 text-white px-2 py-1 rounded-full text-xs">
+                        📅 {course.duration}
+                      </span>
+                      <span className="bg-white/20 text-white px-2 py-1 rounded-full text-xs">
+                        👥 {course.students}
+                      </span>
+                    </div>
+
+                    {/* Key Features */}
+                    <div className="mb-4">
+                      <ul className="space-y-1">
+                        {course.features.slice(0, 3).map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-center text-white/90 text-xs">
+                            <div className="w-1.5 h-1.5 bg-white rounded-full mr-2"></div>
+                            {feature}
+                          </li>
+                        ))}
+                        {course.features.length > 3 && (
+                          <li className="text-white/70 text-xs">
+                            +{course.features.length - 3} more features
+                          </li>
+                        )}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Action Button */}
+                  <div className="relative z-10">
+                    <button className="w-full bg-white/20 backdrop-blur-md border border-white/30 text-white px-4 py-3 rounded-2xl hover:bg-white/30 hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2 text-sm font-medium">
+                      <span>View Details</span>
+                      <ArrowRight size={16} />
+                    </button>
+                  </div>
+                </div>
+              </div>
+
               {course.popular && (
-                <div className="absolute top-4 right-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium z-10">
+                <div className="absolute top-4 left-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium z-20">
                   Most Popular
                 </div>
               )}
-              
-              <div className="relative p-8 h-full flex flex-col">
-                <div className="flex items-center justify-between mb-6">
-                  <div className={`w-12 h-12 bg-gradient-to-br ${getColorClasses(course.color)} rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
-                    <BookOpen className="text-white" size={24} />
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <div key={i} className="w-4 h-4 text-yellow-400 fill-current">
-                          ⭐
-                        </div>
-                      ))}
-                    </div>
-                    <span className="text-sm font-medium text-gray-700 ml-2">{course.rating}</span>
-                  </div>
-                </div>
-                
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors font-poppins">
-                  {course.title}
-                </h3>
-                
-                <p className="text-gray-600 mb-6 leading-relaxed flex-grow font-poppins">
-                  {course.description}
-                </p>
-                
-                <div className="flex items-center justify-between mb-6 text-sm text-gray-600">
-                  <div className="flex items-center space-x-1">
-                    <Clock size={16} />
-                    <span className="font-poppins">{course.duration}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Users size={16} />
-                    <span className="font-poppins">{course.students}</span>
-                  </div>
-                </div>
-                
-                <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-3 font-poppins">Key Features</h4>
-                  <ul className="space-y-2">
-                    {course.features.slice(0, 3).map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-sm text-gray-700">
-                        <div className={`w-2 h-2 bg-gradient-to-r ${getColorClasses(course.color)} rounded-full mr-3 group-hover:scale-125 transition-transform duration-300`}></div>
-                        <span className="font-poppins">{feature}</span>
-                      </li>
-                    ))}
-                    {course.features.length > 3 && (
-                      <li className="text-sm text-gray-500 font-poppins">
-                        +{course.features.length - 3} more features
-                      </li>
-                    )}
-                  </ul>
-                </div>
-                
-                <button className={`w-full bg-gradient-to-r ${getColorClasses(course.color)} text-white px-6 py-3 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-2xl flex items-center justify-center space-x-2 group-hover:scale-105 font-poppins`}>
-                  <span>View Details</span>
-                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={16} />
-                </button>
-              </div>
             </div>
           ))}
         </div>

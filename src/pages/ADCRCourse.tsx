@@ -2,11 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { ArrowLeft, Clock, Users, Award, BookOpen, CheckCircle, Star, Calendar, Download, Phone, Mail, MapPin, Heart, Sparkles, GraduationCap, Target, TrendingUp, Shield, FileText, MessageCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { GlowingEffect } from '../components/ui/glowing-effect';
+import ContactModal from '../components/ui/ContactModal';
 
 const ADCRCourse: React.FC = () => {
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState('about-course');
   const [showFloatingSidebar, setShowFloatingSidebar] = useState(false);
+  const [contactModal, setContactModal] = useState<{
+    isOpen: boolean;
+    type: 'enroll' | 'counselling' | 'contact' | 'brochure';
+  }>({
+    isOpen: false,
+    type: 'enroll'
+  });
 
   // Handle scroll to show/hide floating sidebar and update active section
   useEffect(() => {
@@ -34,6 +42,14 @@ const ADCRCourse: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const openContactModal = (type: 'enroll' | 'counselling' | 'contact' | 'brochure') => {
+    setContactModal({ isOpen: true, type });
+  };
+
+  const closeContactModal = () => {
+    setContactModal({ isOpen: false, type: 'enroll' });
+  };
+
   const navigationSections = [
     { id: 'about-course', label: 'About Course', icon: BookOpen },
     { id: 'curriculum', label: 'Curriculum', icon: FileText },
@@ -46,7 +62,7 @@ const ADCRCourse: React.FC = () => {
     setActiveSection(sectionId);
     const element = document.getElementById(sectionId);
     if (element) {
-      const headerHeight = 200;
+      const headerHeight = 250;
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
       const offsetPosition = elementPosition - headerHeight;
 
@@ -340,11 +356,17 @@ const ADCRCourse: React.FC = () => {
                     <GraduationCap size={18} />
                     <span>Access LMS</span>
                   </button>
-                  <button className="w-full bg-white text-green-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors font-poppins">
+                  <button 
+                    onClick={() => openContactModal('enroll')}
+                    className="w-full bg-white text-green-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors font-poppins"
+                  >
                     Enroll Now
                   </button>
                 </div>
-                <button className="w-full border border-white/30 text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors flex items-center justify-center font-poppins">
+                <button 
+                  onClick={() => openContactModal('brochure')}
+                  className="w-full border border-white/30 text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors flex items-center justify-center font-poppins"
+                >
                   <Download className="mr-2" size={16} />
                   Download Brochure
                 </button>
@@ -379,7 +401,7 @@ const ADCRCourse: React.FC = () => {
       {/* Course Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* About Course Section */}
-        <section id="about-course" className="mb-20" style={{ scrollMarginTop: '200px' }}>
+        <section id="about-course" className="mb-20" style={{ scrollMarginTop: '250px' }}>
           <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">About the Program</h2>
           <div className="bg-white/60 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-lg mb-12">
             <p className="text-gray-700 leading-relaxed mb-6 text-lg">
@@ -392,7 +414,7 @@ const ADCRCourse: React.FC = () => {
         </section>
 
         {/* Curriculum Section */}
-        <section id="curriculum" className="mb-20" style={{ scrollMarginTop: '200px' }}>
+        <section id="curriculum" className="mb-20" style={{ scrollMarginTop: '250px' }}>
           <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
             <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">Program Curriculum</span>
           </h2>
@@ -434,7 +456,7 @@ const ADCRCourse: React.FC = () => {
         </section>
 
         {/* Career Pathways Section */}
-        <section id="career-pathways" className="mb-20" style={{ scrollMarginTop: '200px' }}>
+        <section id="career-pathways" className="mb-20" style={{ scrollMarginTop: '250px' }}>
           <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Career Pathways</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="bg-white/60 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-lg">
@@ -464,7 +486,7 @@ const ADCRCourse: React.FC = () => {
         </section>
 
         {/* Program Outcomes Section */}
-        <section id="program-outcomes" className="mb-20" style={{ scrollMarginTop: '200px' }}>
+        <section id="program-outcomes" className="mb-20" style={{ scrollMarginTop: '250px' }}>
           <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Program Outcomes</h2>
           <div className="bg-white/60 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-lg">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -479,7 +501,7 @@ const ADCRCourse: React.FC = () => {
         </section>
 
         {/* FAQs Section */}
-        <section id="faqs" className="mb-20" style={{ scrollMarginTop: '200px' }}>
+        <section id="faqs" className="mb-20" style={{ scrollMarginTop: '250px' }}>
           <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {faqs.map((faq, index) => (
@@ -509,16 +531,30 @@ const ADCRCourse: React.FC = () => {
                 <GraduationCap size={20} />
                 <span>Access LMS</span>
               </button>
-              <button className="bg-white text-green-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors text-lg">
+              <button 
+                onClick={() => openContactModal('enroll')}
+                className="bg-white text-green-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors text-lg"
+              >
                 Enroll Now
               </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition-colors text-lg">
+              <button 
+                onClick={() => openContactModal('counselling')}
+                className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition-colors text-lg"
+              >
                 Schedule Free Counselling
               </button>
             </div>
           </div>
         </section>
       </div>
+
+      {/* Contact Modal */}
+      <ContactModal
+        isOpen={contactModal.isOpen}
+        onClose={closeContactModal}
+        buttonType={contactModal.type}
+        courseName="Advanced Diploma in Clinical Research"
+      />
     </div>
   );
 };

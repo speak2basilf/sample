@@ -2,12 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { ArrowLeft, Clock, Users, Award, BookOpen, CheckCircle, Star, Calendar, Download, Phone, Mail, MapPin, Heart, Sparkles, GraduationCap, Target, TrendingUp, Shield, Microscope, Activity, Brain, FileText, BarChart, Globe, Upload, MessageCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { TestimonialSlider } from '../components/ui/testimonial-slider';
+import ContactModal from '../components/ui/ContactModal';
 
 const CRMCourse: React.FC = () => {
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState('about-course');
   const [showFloatingSidebar, setShowFloatingSidebar] = useState(false);
-  const [activeEnrollmentStep, setActiveEnrollmentStep] = useState(1);
+  const [contactModal, setContactModal] = useState<{
+    isOpen: boolean;
+    type: 'enroll' | 'counselling' | 'contact' | 'brochure';
+  }>({
+    isOpen: false,
+    type: 'enroll'
+  });
 
   // Handle scroll to show/hide floating sidebar and update active section
   useEffect(() => {
@@ -35,6 +42,14 @@ const CRMCourse: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const openContactModal = (type: 'enroll' | 'counselling' | 'contact' | 'brochure') => {
+    setContactModal({ isOpen: true, type });
+  };
+
+  const closeContactModal = () => {
+    setContactModal({ isOpen: false, type: 'enroll' });
+  };
+
   const navigationSections = [
     { id: 'about-course', label: 'About Course', icon: BookOpen },
     { id: 'syllabus', label: 'Syllabus', icon: FileText },
@@ -48,7 +63,7 @@ const CRMCourse: React.FC = () => {
     setActiveSection(sectionId);
     const element = document.getElementById(sectionId);
     if (element) {
-      const headerHeight = 200; // Account for main header + submenu
+      const headerHeight = 250; // Account for main header + submenu
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
       const offsetPosition = elementPosition - headerHeight;
 
@@ -391,11 +406,17 @@ const CRMCourse: React.FC = () => {
                     <GraduationCap size={18} />
                     <span>Access LMS</span>
                   </button>
-                  <button className="w-full bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors font-poppins">
+                  <button 
+                    onClick={() => openContactModal('enroll')}
+                    className="w-full bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors font-poppins"
+                  >
                     Enroll Now
                   </button>
                 </div>
-                <button className="w-full border border-white/30 text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors flex items-center justify-center font-poppins">
+                <button 
+                  onClick={() => openContactModal('brochure')}
+                  className="w-full border border-white/30 text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors flex items-center justify-center font-poppins"
+                >
                   <Download className="mr-2" size={16} />
                   Download Brochure
                 </button>
@@ -430,7 +451,7 @@ const CRMCourse: React.FC = () => {
       {/* Course Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* About Course Section */}
-        <section id="about-course" className="mb-20">
+        <section id="about-course" className="mb-20" style={{ scrollMarginTop: '250px' }}>
           <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">About Clinical Research Course</h2>
           
           {/* Introduction */}
@@ -463,7 +484,7 @@ const CRMCourse: React.FC = () => {
         </section>
 
         {/* Syllabus Section */}
-        <section id="syllabus" className="mb-20">
+        <section id="syllabus" className="mb-20" style={{ scrollMarginTop: '250px' }}>
           <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
             <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Course Syllabus</span>
           </h2>
@@ -537,7 +558,7 @@ const CRMCourse: React.FC = () => {
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonials" className="mb-20">
+        <section id="testimonials" className="mb-20" style={{ scrollMarginTop: '250px' }}>
           <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Hear From Our Successful Graduates</h2>
           <div className="bg-white/40 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-lg">
             <TestimonialSlider testimonials={testimonials.map(t => ({
@@ -550,7 +571,7 @@ const CRMCourse: React.FC = () => {
         </section>
 
         {/* Program Outcomes Section */}
-        <section id="program-outcomes" className="mb-20">
+        <section id="program-outcomes" className="mb-20" style={{ scrollMarginTop: '250px' }}>
           <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Program Outcomes</h2>
           <div className="bg-white/60 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-lg">
             <p className="text-gray-700 mb-8 text-center text-lg">
@@ -568,7 +589,7 @@ const CRMCourse: React.FC = () => {
         </section>
 
         {/* Certification Section */}
-        <section id="certification" className="mb-20">
+        <section id="certification" className="mb-20" style={{ scrollMarginTop: '250px' }}>
           <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Certification</h2>
           <div className="bg-white/60 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-lg">
             <div className="text-center">
@@ -632,7 +653,7 @@ const CRMCourse: React.FC = () => {
         </section>
 
         {/* FAQs Section */}
-        <section id="faqs" className="mb-20">
+        <section id="faqs" className="mb-20" style={{ scrollMarginTop: '250px' }}>
           <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {faqs.map((faq, index) => (
@@ -663,17 +684,31 @@ const CRMCourse: React.FC = () => {
                   <GraduationCap size={20} />
                   <span>Access LMS</span>
                 </button>
-                <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors text-lg">
+                <button 
+                  onClick={() => openContactModal('enroll')}
+                  className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors text-lg"
+                >
                   Enroll Now
                 </button>
               </div>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition-colors text-lg">
+              <button 
+                onClick={() => openContactModal('counselling')}
+                className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition-colors text-lg"
+              >
                 Schedule Free Counselling
               </button>
             </div>
           </div>
         </section>
       </div>
+
+      {/* Contact Modal */}
+      <ContactModal
+        isOpen={contactModal.isOpen}
+        onClose={closeContactModal}
+        buttonType={contactModal.type}
+        courseName="PG Diploma in Clinical Research"
+      />
     </div>
   );
 };
