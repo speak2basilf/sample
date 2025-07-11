@@ -17,6 +17,7 @@ import PlacementsPage from './pages/PlacementsPage';
 import AccreditationsPage from './pages/AccreditationsPage';
 import LearningCentersPage from './pages/LearningCentersPage';
 import BlogPage from './pages/BlogPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 
 // Main Home Page Component
 const HomePage: React.FC = () => {
@@ -82,6 +83,11 @@ function App() {
           <Route path="/blog" element={
             <CoursePageLayout>
               <BlogPage />
+            </CoursePageLayout>
+          } />
+          <Route path="/privacy-policy" element={
+            <CoursePageLayout>
+              <PrivacyPolicyPage />
             </CoursePageLayout>
           } />
           {/* Placeholder routes for other courses */}

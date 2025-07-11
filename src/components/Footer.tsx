@@ -119,7 +119,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <div className="flex flex-wrap justify-center gap-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-300 hover:text-blue-400 text-sm transition-colors">Privacy Policy</a>
+              <a href="/privacy-policy" className="text-gray-300 hover:text-blue-400 text-sm transition-colors">Privacy Policy</a>
               <a href="#" className="text-gray-300 hover:text-blue-400 text-sm transition-colors">Terms & Conditions</a>
               <a href="#" className="text-gray-300 hover:text-blue-400 text-sm transition-colors">Sitemap</a>
               <a href="#" className="text-gray-300 hover:text-blue-400 text-sm transition-colors">Accessibility Statement</a>
