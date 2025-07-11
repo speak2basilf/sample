@@ -18,6 +18,8 @@ const Contact: React.FC = () => {
   });
 
   const [activeTab, setActiveTab] = useState('general');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -33,10 +35,42 @@ const Contact: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setFormData({ name: '', email: '', phone: '', course: '', message: '' });
+    
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    
+    try {
+      const response = await fetch('https://hook.eu2.make.com/q4oedzjganbsk9c972mlj39p63kij5gi', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          course: formData.course,
+          message: formData.message,
+          formType: 'general_enquiry',
+          timestamp: new Date().toISOString(),
+          source: 'website_contact_form'
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', phone: '', course: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleCallbackSubmit = (e: React.FormEvent) => {
@@ -273,11 +307,29 @@ const Contact: React.FC = () => {
 
                 <button
                   type="submit"
+                  disabled={isSubmitting}
                   className="w-full bg-gradient-to-r from-blue-600/90 to-indigo-600/90 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-2xl hover:from-blue-700/90 hover:to-indigo-700/90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl flex items-center justify-center space-x-2"
                 >
-                  <span>Send Message</span>
+                  <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
                   <Send size={20} />
                 </button>
+                
+                {/* Success/Error Messages */}
+                {submitStatus === 'success' && (
+                  <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-2xl">
+                    <p className="text-green-800 text-center font-medium">
+                      ✅ Thank you! Your message has been sent successfully. We'll get back to you soon.
+                    </p>
+                  </div>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-2xl">
+                    <p className="text-red-800 text-center font-medium">
+                      ❌ Sorry, there was an error sending your message. Please try again or contact us directly.
+                    </p>
+                  </div>
+                )}
               </form>
             </div>
           </div>
