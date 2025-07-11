@@ -13,6 +13,8 @@ import Chatbot from './components/Chatbot';
 import CRMCourse from './pages/CRMCourse';
 import MedicalCodingCourse from './pages/MedicalCodingCourse';
 import ClinicalSASCourse from './pages/ClinicalSASCourse';
+import ADCRCourse from './pages/ADCRCourse';
+import CoursesPage from './pages/CoursesPage';
 import PlacementsPage from './pages/PlacementsPage';
 import AccreditationsPage from './pages/AccreditationsPage';
 import LearningCentersPage from './pages/LearningCentersPage';
@@ -55,6 +57,11 @@ function App() {
       <div className="min-h-screen bg-white">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/courses" element={
+            <CoursePageLayout>
+              <CoursesPage />
+            </CoursePageLayout>
+          } />
           <Route path="/courses/crm" element={
             <CoursePageLayout>
               <CRMCourse />
@@ -98,9 +105,7 @@ function App() {
           } />
           <Route path="/courses/adcr" element={
             <CoursePageLayout>
-              <div className="min-h-screen flex items-center justify-center">
-                <h1 className="text-4xl font-bold text-gray-900">Advanced Diploma in Clinical Research - Coming Soon</h1>
-              </div>
+              <ADCRCourse />
             </CoursePageLayout>
           } />
           <Route path="/courses/clinical-sas" element={
