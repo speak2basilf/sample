@@ -139,7 +139,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, buttonType
               </h3>
               
               {buttonType === 'brochure' && (
-                       Your brochure download will start automatically.
+                <div>
                   <p className="text-blue-800 mb-4 font-poppins">
                     Your brochure download should start automatically.
                   </p>
@@ -147,18 +147,18 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, buttonType
                     <button
                       onClick={triggerBrochureDownload}
                       className="inline-flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-colors font-poppins"
-                         <span>Download Brochure</span>
+                    >
                       <Download size={16} />
                       <span>If the brochure didn't download, click here</span>
-                     {!showBrochureDownload && (
-                       <button
-                         onClick={triggerBrochureDownload}
-                         className="inline-flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-colors font-poppins"
-                       >
-                         <Download size={16} />
-                         <span>Download Brochure Now</span>
-                       </button>
-                     )}
+                    </button>
+                  )}
+                  {!showBrochureDownload && (
+                    <button
+                      onClick={triggerBrochureDownload}
+                      className="inline-flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-colors font-poppins"
+                    >
+                      <Download size={16} />
+                      <span>Download Brochure Now</span>
                     </button>
                   )}
                 </div>
