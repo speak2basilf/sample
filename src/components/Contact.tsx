@@ -115,40 +115,40 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-white via-slate-50 to-blue-50 relative overflow-hidden">
+    <section id="contact" className="py-20 gradient-bg-secondary relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-blue-200 to-indigo-200 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-pulse"></div>
-        <div className="absolute bottom-10 right-10 w-64 h-64 bg-gradient-to-r from-indigo-200 to-blue-200 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-pulse delay-1000"></div>
+        <div className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-blue-300 to-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+        <div className="absolute bottom-10 right-10 w-64 h-64 bg-gradient-to-r from-indigo-300 to-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-1000"></div>
       </div>
 
       {/* Floating decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <Heart className="absolute top-20 right-1/3 text-pink-400 opacity-50 animate-bounce" size={20} style={{ animationDelay: '0s', animationDuration: '3.8s' }} />
-        <Star className="absolute bottom-32 left-1/4 text-yellow-400 opacity-60 animate-bounce" size={22} style={{ animationDelay: '1s', animationDuration: '4.2s' }} />
-        <Sparkles className="absolute top-1/3 left-1/5 text-purple-400 opacity-40 animate-bounce" size={24} style={{ animationDelay: '2s', animationDuration: '3.5s' }} />
+        <Heart className="absolute top-20 right-1/3 text-blue-400 opacity-30 animate-bounce" size={20} style={{ animationDelay: '0s', animationDuration: '3.8s' }} />
+        <Star className="absolute bottom-32 left-1/4 text-blue-500 opacity-40 animate-bounce" size={22} style={{ animationDelay: '1s', animationDuration: '4.2s' }} />
+        <Sparkles className="absolute top-1/3 left-1/5 text-blue-400 opacity-30 animate-bounce" size={24} style={{ animationDelay: '2s', animationDuration: '3.5s' }} />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Get In <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Touch</span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-glass-primary mb-4 mobile-center">
+            Get In <span className="text-glass-primary">Touch</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-glass-secondary max-w-3xl mx-auto mobile-center">
             Ready to start your healthcare career journey? Contact us today for personalized guidance and course recommendations.
           </p>
         </div>
 
         {/* Contact Tabs */}
         <div className="flex justify-center mb-12">
-          <div className="bg-white/40 backdrop-blur-lg border border-white/20 rounded-2xl p-2 shadow-lg">
-            <div className="flex space-x-2">
+          <div className="glass p-2">
+            <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
               <button
                 onClick={() => setActiveTab('general')}
-                className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
+                className={`px-4 sm:px-6 py-3 rounded-xl font-medium transition-all duration-300 text-sm sm:text-base ${
                   activeTab === 'general'
-                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg'
-                    : 'text-gray-600 hover:text-blue-600 hover:bg-white/50'
+                    ? 'glass-button'
+                    : 'text-glass-secondary hover:text-blue-600 hover:glass'
                 }`}
               >
                 <Mail className="inline-block mr-2" size={16} />
@@ -156,10 +156,10 @@ const Contact: React.FC = () => {
               </button>
               <button
                 onClick={() => setActiveTab('locations')}
-                className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
+                className={`px-4 sm:px-6 py-3 rounded-xl font-medium transition-all duration-300 text-sm sm:text-base ${
                   activeTab === 'locations'
-                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg'
-                    : 'text-gray-600 hover:text-blue-600 hover:bg-white/50'
+                    ? 'glass-button'
+                    : 'text-glass-secondary hover:text-blue-600 hover:glass'
                 }`}
               >
                 <MapPin className="inline-block mr-2" size={16} />
@@ -167,10 +167,10 @@ const Contact: React.FC = () => {
               </button>
               <button
                 onClick={() => setActiveTab('callback')}
-                className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
+                className={`px-4 sm:px-6 py-3 rounded-xl font-medium transition-all duration-300 text-sm sm:text-base ${
                   activeTab === 'callback'
-                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg'
-                    : 'text-gray-600 hover:text-blue-600 hover:bg-white/50'
+                    ? 'glass-button'
+                    : 'text-glass-secondary hover:text-blue-600 hover:glass'
                 }`}
               >
                 <MessageSquare className="inline-block mr-2" size={16} />
@@ -182,57 +182,57 @@ const Contact: React.FC = () => {
 
         {/* General Inquiries Tab */}
         {activeTab === 'general' && (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Let's Start Your Journey</h3>
-                <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                <h3 className="text-xl sm:text-2xl font-bold text-glass-primary mb-6 mobile-center">Let's Start Your Journey</h3>
+                <p className="text-base sm:text-lg text-glass-secondary leading-relaxed mb-8 mobile-center">
                   Our career counselors are here to help you choose the right program and guide you towards a successful healthcare career.
                 </p>
               </div>
 
               <div className="space-y-6">
-                <div className="flex items-center space-x-4 p-4 bg-white/40 backdrop-blur-lg border border-white/20 rounded-2xl hover:bg-white/60 hover:scale-105 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-400/30 to-blue-600/30 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center">
-                    <Phone className="text-blue-600" size={20} />
+                <div className="glass-card flex items-center space-x-4 p-4 hover:scale-105 transition-all duration-300">
+                  <div className="glass w-12 h-12 rounded-full flex items-center justify-center">
+                    <Phone className="text-glass-primary" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Phone</h4>
-                    <p className="text-gray-600">+919052992967</p>
+                    <h4 className="font-semibold text-glass-primary">Phone</h4>
+                    <p className="text-glass-secondary">+919052992967</p>
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4 p-4 bg-white/40 backdrop-blur-lg border border-white/20 rounded-2xl hover:bg-white/60 hover:scale-105 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-400/30 to-indigo-600/30 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center">
-                    <Mail className="text-indigo-600" size={20} />
+                <div className="glass-card flex items-center space-x-4 p-4 hover:scale-105 transition-all duration-300">
+                  <div className="glass w-12 h-12 rounded-full flex items-center justify-center">
+                    <Mail className="text-glass-primary" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Email</h4>
-                    <p className="text-gray-600">info@cliniglobal.com</p>
-                    <p className="text-gray-600">admin@cliniglobal.com</p>
+                    <h4 className="font-semibold text-glass-primary">Email</h4>
+                    <p className="text-glass-secondary">info@cliniglobal.com</p>
+                    <p className="text-glass-secondary">admin@cliniglobal.com</p>
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4 p-4 bg-white/40 backdrop-blur-lg border border-white/20 rounded-2xl hover:bg-white/60 hover:scale-105 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-400/30 to-indigo-600/30 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center">
-                    <Clock className="text-indigo-600" size={20} />
+                <div className="glass-card flex items-center space-x-4 p-4 hover:scale-105 transition-all duration-300">
+                  <div className="glass w-12 h-12 rounded-full flex items-center justify-center">
+                    <Clock className="text-glass-primary" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Office Hours</h4>
-                    <p className="text-gray-600">Mon - Sat: 9:00 AM - 7:00 PM</p>
-                    <p className="text-gray-600">Sunday: 10:00 AM - 4:00 PM</p>
+                    <h4 className="font-semibold text-glass-primary">Office Hours</h4>
+                    <p className="text-glass-secondary">Mon - Sat: 9:00 AM - 7:00 PM</p>
+                    <p className="text-glass-secondary">Sunday: 10:00 AM - 4:00 PM</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white/40 backdrop-blur-lg border border-white/20 p-8 rounded-3xl shadow-2xl hover:bg-white/50 transition-all duration-500">
+            <div className="glass-card p-6 sm:p-8 hover:glass transition-all duration-500">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-glass-primary mb-2">
                       Full Name *
                     </label>
                     <input
@@ -242,12 +242,12 @@ const Contact: React.FC = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-white/50 backdrop-blur-md border border-white/30 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:bg-white/70 transition-all duration-300"
+                      className="glass-input w-full px-4 py-3"
                       placeholder="Enter your full name"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-glass-primary mb-2">
                       Email Address *
                     </label>
                     <input
@@ -257,7 +257,7 @@ const Contact: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-white/50 backdrop-blur-md border border-white/30 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:bg-white/70 transition-all duration-300"
+                      className="glass-input w-full px-4 py-3"
                       placeholder="Enter your email"
                     />
                   </div>
@@ -265,7 +265,7 @@ const Contact: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="phone" className="block text-sm font-medium text-glass-primary mb-2">
                       Phone Number *
                     </label>
                     <input
@@ -275,12 +275,12 @@ const Contact: React.FC = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-white/50 backdrop-blur-md border border-white/30 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:bg-white/70 transition-all duration-300"
+                      className="glass-input w-full px-4 py-3"
                       placeholder="Enter your phone number"
                     />
                   </div>
                   <div>
-                    <label htmlFor="course" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="course" className="block text-sm font-medium text-glass-primary mb-2">
                       Interested Course
                     </label>
                     <select
@@ -288,7 +288,7 @@ const Contact: React.FC = () => {
                       name="course"
                       value={formData.course}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white/50 backdrop-blur-md border border-white/30 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:bg-white/70 transition-all duration-300"
+                      className="glass-input w-full px-4 py-3"
                     >
                       <option value="">Select a course</option>
                       {courses.map((course, index) => (
@@ -299,7 +299,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-glass-primary mb-2">
                     Message
                   </label>
                   <textarea
@@ -308,7 +308,7 @@ const Contact: React.FC = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    className="w-full px-4 py-3 bg-white/50 backdrop-blur-md border border-white/30 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:bg-white/70 transition-all duration-300 resize-none"
+                    className="glass-input w-full px-4 py-3 resize-none"
                     placeholder="Tell us about your career goals and any questions you have..."
                   />
                 </div>
@@ -316,7 +316,7 @@ const Contact: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-blue-600/90 to-indigo-600/90 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-2xl hover:from-blue-700/90 hover:to-indigo-700/90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl flex items-center justify-center space-x-2"
+                  className="glass-button w-full px-8 py-4 flex items-center justify-center space-x-2"
                 >
                   <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
                   <Send size={20} />
@@ -324,16 +324,16 @@ const Contact: React.FC = () => {
                 
                 {/* Success/Error Messages */}
                 {submitStatus === 'success' && (
-                  <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-2xl">
-                    <p className="text-green-800 text-center font-medium">
+                  <div className="mt-4 p-4 glass border border-green-200">
+                    <p className="text-green-700 text-center font-medium">
                       ✅ Thank you! Your message has been sent successfully. We'll get back to you soon.
                     </p>
                   </div>
                 )}
                 
                 {submitStatus === 'error' && (
-                  <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-2xl">
-                    <p className="text-red-800 text-center font-medium">
+                  <div className="mt-4 p-4 glass border border-red-200">
+                    <p className="text-red-700 text-center font-medium">
                       ❌ Sorry, there was an error sending your message. Please try again or contact us directly.
                     </p>
                   </div>
@@ -477,20 +477,20 @@ const Contact: React.FC = () => {
 
         {/* Quick Contact Options */}
         <div className="text-center mt-16">
-          <div className="bg-white/40 backdrop-blur-lg border border-white/20 rounded-3xl p-8 shadow-2xl hover:bg-white/50 transition-all duration-500">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <div className="glass-card p-6 sm:p-8 hover:glass transition-all duration-500">
+            <h3 className="text-xl sm:text-2xl font-bold text-glass-primary mb-4">
               Need Immediate Assistance?
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-glass-secondary mb-6">
               Our counselors are available to help you choose the right course and answer all your questions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-blue-600/90 to-indigo-600/90 backdrop-blur-md border border-white/20 text-white px-8 py-3 rounded-full hover:from-blue-700/90 hover:to-indigo-700/90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mobile-center">
+              <button className="glass-button px-6 sm:px-8 py-3">
                 Call Now: +919052992967
               </button>
               <button 
                 onClick={() => window.open('https://wa.me/919052992967?text=Hello%20CliniGlobal,%20I%20would%20like%20to%20know%20more%20about%20your%20healthcare%20courses.', '_blank')}
-                className="bg-white/20 backdrop-blur-md border border-blue-600/30 text-blue-600 px-8 py-3 rounded-full hover:bg-white/30 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="glass border border-blue-600/30 text-glass-primary px-6 sm:px-8 py-3 hover:glass-card hover:scale-105 transition-all duration-300"
               >
                 WhatsApp Chat
               </button>

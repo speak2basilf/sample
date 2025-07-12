@@ -3,7 +3,7 @@ import { ArrowRight, Calendar, Award, Users, BookOpen, Heart, Star, Sparkles, St
 
 const Hero: React.FC = () => {
   return (
-    <section id="home" className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50 py-20 overflow-hidden min-h-screen flex items-center">
+    <section id="home" className="relative gradient-bg-hero py-20 overflow-hidden min-h-screen flex items-center">
       {/* Large Healthcare Professional Banner Background */}
       <div className="absolute inset-0">
         {/* Main large banner image with overlay */}
@@ -87,17 +87,17 @@ const Hero: React.FC = () => {
           {/* Left Content */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <div className="inline-flex items-center px-4 py-2 bg-white/40 backdrop-blur-md border border-white/30 text-blue-700 rounded-full text-sm font-medium shadow-lg animate-pulse">
+              <div className="glass inline-flex items-center px-4 py-2 text-glass-primary text-sm font-medium animate-pulse">
                 <Award className="mr-2" size={16} />
                 #1 Healthcare Training Institute
               </div>
               
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-glass-primary leading-tight mobile-center">
                 Learn, Advance,
-                <span className="block bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                <span className="block text-glass-primary">
                   Accelerate Your Career
                 </span>
-                <span className="block text-2xl md:text-4xl group cursor-pointer font-poppins">
+                <span className="block text-xl sm:text-2xl md:text-4xl group cursor-pointer font-poppins">
                   With 
                   <span className="relative inline-block ml-2 underline-hover-continuous font-bold cliniglobal-brand font-poppins">
                     <span className="cliniglobal-clini">Clini</span><span className="cliniglobal-global">Global</span>
@@ -105,47 +105,47 @@ const Hero: React.FC = () => {
                 </span>
               </h1>
               
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-medium font-poppins">
+              <p className="text-base sm:text-lg md:text-xl text-glass-secondary leading-relaxed font-medium font-poppins mobile-center">
                 Step into the Future of Healthcare with New-Age Programs like Clinical Research, Medical Coding, 
                 Clinical SAS, Bioinformatics, AI & ML in Healthcare, MBA in Healthcare, and more – designed to 
                 equip you for tomorrow's medical and healthcare landscape.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="group inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-600/95 to-indigo-600/95 backdrop-blur-md border border-white/30 text-white rounded-full hover:from-blue-700/95 hover:to-indigo-700/95 hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl font-poppins">
+            <div className="flex flex-col sm:flex-row gap-4 mobile-center">
+              <button className="glass-button group inline-flex items-center px-6 md:px-8 py-3 md:py-4 font-poppins">
                 <span className="font-medium text-sm md:text-base">Explore Courses</span>
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
               </button>
               
-              <button className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white/30 backdrop-blur-md border border-blue-600/40 text-blue-700 rounded-full hover:bg-white/40 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl font-medium font-poppins text-sm md:text-base">
+              <button className="glass inline-flex items-center px-6 md:px-8 py-3 md:py-4 text-glass-primary hover:glass-card hover:scale-105 transition-all duration-300 font-medium font-poppins text-sm md:text-base">
                 <Calendar className="mr-2" size={20} />
                 Schedule Free Counselling
               </button>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 md:gap-8 pt-8">
-              <div className="text-center p-4 bg-white/30 backdrop-blur-md rounded-2xl border border-white/30 shadow-lg hover:scale-105 transition-transform duration-300">
-                <div className="text-2xl md:text-3xl font-bold text-blue-600 font-poppins">5000+</div>
-                <div className="text-xs md:text-sm text-gray-700 font-medium font-poppins">Students Trained</div>
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-8 pt-8">
+              <div className="glass-card text-center p-3 sm:p-4 hover:scale-105 transition-transform duration-300">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-glass-primary font-poppins">5000+</div>
+                <div className="text-xs md:text-sm text-glass-secondary font-medium font-poppins">Students Trained</div>
               </div>
-              <div className="text-center p-4 bg-white/30 backdrop-blur-md rounded-2xl border border-white/30 shadow-lg hover:scale-105 transition-transform duration-300">
-                <div className="text-2xl md:text-3xl font-bold text-indigo-600 font-poppins">95%</div>
-                <div className="text-xs md:text-sm text-gray-700 font-medium font-poppins">Placement Rate</div>
+              <div className="glass-card text-center p-3 sm:p-4 hover:scale-105 transition-transform duration-300">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-glass-primary font-poppins">95%</div>
+                <div className="text-xs md:text-sm text-glass-secondary font-medium font-poppins">Placement Rate</div>
               </div>
-              <div className="text-center p-4 bg-white/30 backdrop-blur-md rounded-2xl border border-white/30 shadow-lg hover:scale-105 transition-transform duration-300">
-                <div className="text-2xl md:text-3xl font-bold text-blue-600 font-poppins">50+</div>
-                <div className="text-xs md:text-sm text-gray-700 font-medium font-poppins">Industry Partners</div>
+              <div className="glass-card text-center p-3 sm:p-4 hover:scale-105 transition-transform duration-300">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-glass-primary font-poppins">50+</div>
+                <div className="text-xs md:text-sm text-glass-secondary font-medium font-poppins">Industry Partners</div>
               </div>
             </div>
           </div>
 
           {/* Right Content - Enhanced Hero Visual with Healthcare Video */}
           <div className="relative">
-            <div className="relative bg-white/40 backdrop-blur-lg border border-white/30 p-8 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500">
-              <div className="aspect-video bg-gradient-to-br from-blue-100/80 to-indigo-100/80 rounded-2xl flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/15 to-indigo-600/15"></div>
+            <div className="glass-card relative p-6 sm:p-8 hover:shadow-3xl transition-all duration-500">
+              <div className="aspect-video glass rounded-2xl flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-indigo-600/10"></div>
                 
                 {/* Healthcare Video Background */}
                 <div className="absolute inset-0 rounded-2xl overflow-hidden">
@@ -179,49 +179,49 @@ const Hero: React.FC = () => {
                 </div>
                 
                 <div className="relative z-10 text-center">
-                  <div className="w-20 h-20 bg-white/95 backdrop-blur-md rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer">
-                    <Calendar className="text-blue-600 ml-1" size={32} />
+                  <div className="glass w-16 sm:w-20 h-16 sm:h-20 rounded-full flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300 cursor-pointer">
+                    <Calendar className="text-glass-primary ml-1" size={28} />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2 drop-shadow-lg">Schedule Free Counselling</h3>
-                  <p className="text-white/90 font-medium drop-shadow-md">Get personalized career guidance from our experts</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-glass-white mb-2 drop-shadow-lg">Schedule Free Counselling</h3>
+                  <p className="text-sm sm:text-base text-glass-white font-medium drop-shadow-md">Get personalized career guidance from our experts</p>
                 </div>
               </div>
               
               {/* Course Highlights with Healthcare Icons */}
               <div className="mt-6 space-y-4">
-                <div className="flex items-center space-x-3 p-3 bg-white/30 backdrop-blur-md rounded-xl border border-white/30 hover:bg-white/40 transition-all duration-300">
-                  <div className="w-8 h-8 bg-blue-100/80 rounded-full flex items-center justify-center">
-                    <BookOpen className="text-blue-600" size={16} />
+                <div className="glass flex items-center space-x-3 p-3 hover:glass-card transition-all duration-300">
+                  <div className="w-8 h-8 glass rounded-full flex items-center justify-center">
+                    <BookOpen className="text-glass-primary" size={16} />
                   </div>
-                  <span className="text-gray-700 font-medium">Advanced LMS Support</span>
+                  <span className="text-glass-secondary font-medium text-sm sm:text-base">Advanced LMS Support</span>
                 </div>
-                <div className="flex items-center space-x-3 p-3 bg-white/30 backdrop-blur-md rounded-xl border border-white/30 hover:bg-white/40 transition-all duration-300">
-                  <div className="w-8 h-8 bg-indigo-100/80 rounded-full flex items-center justify-center">
-                    <Users className="text-indigo-600" size={16} />
+                <div className="glass flex items-center space-x-3 p-3 hover:glass-card transition-all duration-300">
+                  <div className="w-8 h-8 glass rounded-full flex items-center justify-center">
+                    <Users className="text-glass-primary" size={16} />
                   </div>
-                  <span className="text-gray-700 font-medium">100% Placement Assistance</span>
+                  <span className="text-glass-secondary font-medium text-sm sm:text-base">100% Placement Assistance</span>
                 </div>
-                <div className="flex items-center space-x-3 p-3 bg-white/30 backdrop-blur-md rounded-xl border border-white/30 hover:bg-white/40 transition-all duration-300">
-                  <div className="w-8 h-8 bg-blue-100/80 rounded-full flex items-center justify-center">
-                    <Award className="text-blue-600" size={16} />
+                <div className="glass flex items-center space-x-3 p-3 hover:glass-card transition-all duration-300">
+                  <div className="w-8 h-8 glass rounded-full flex items-center justify-center">
+                    <Award className="text-glass-primary" size={16} />
                   </div>
-                  <span className="text-gray-700 font-medium">Industry Recognised Accreditations and Certification</span>
+                  <span className="text-glass-secondary font-medium text-sm sm:text-base">Industry Recognised Accreditations</span>
                 </div>
               </div>
             </div>
             
             {/* Enhanced Floating Cards with Healthcare Theme */}
-            <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-blue-400/70 to-indigo-400/70 backdrop-blur-md rounded-2xl shadow-lg animate-bounce border border-white/30 flex items-center justify-center">
-              <Stethoscope className="text-blue-600" size={24} />
+            <div className="glass absolute -top-4 -right-4 w-16 sm:w-20 h-16 sm:h-20 animate-bounce flex items-center justify-center">
+              <Stethoscope className="text-glass-primary" size={20} />
             </div>
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-indigo-400/70 to-blue-400/70 backdrop-blur-md rounded-2xl shadow-lg animate-bounce delay-1000 border border-white/30 flex items-center justify-center">
-              <Activity className="text-indigo-600" size={20} />
+            <div className="glass absolute -bottom-4 -left-4 w-14 sm:w-16 h-14 sm:h-16 animate-bounce delay-1000 flex items-center justify-center">
+              <Activity className="text-glass-primary" size={18} />
             </div>
-            <div className="absolute top-1/2 -left-6 w-12 h-12 bg-gradient-to-br from-purple-400/70 to-pink-400/70 backdrop-blur-md rounded-full shadow-lg animate-bounce delay-2000 border border-white/30 flex items-center justify-center">
-              <Brain className="text-purple-600" size={16} />
+            <div className="glass absolute top-1/2 -left-6 w-12 h-12 rounded-full animate-bounce delay-2000 flex items-center justify-center">
+              <Brain className="text-glass-primary" size={16} />
             </div>
-            <div className="absolute top-1/4 -right-6 w-14 h-14 bg-gradient-to-br from-cyan-400/70 to-blue-400/70 backdrop-blur-md rounded-2xl shadow-lg animate-bounce delay-1500 border border-white/30 flex items-center justify-center">
-              <Microscope className="text-cyan-600" size={18} />
+            <div className="glass absolute top-1/4 -right-6 w-14 h-14 animate-bounce delay-1500 flex items-center justify-center">
+              <Microscope className="text-glass-primary" size={18} />
             </div>
           </div>
         </div>
