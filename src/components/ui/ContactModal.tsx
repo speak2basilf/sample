@@ -116,37 +116,37 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, buttonType
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-white/95 backdrop-blur-lg border border-white/20 rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 bg-black/30 backdrop-blur-md z-50 flex items-center justify-center p-4">
+      <div className="glass-card max-w-2xl w-full max-h-[90vh] overflow-y-auto">
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-200">
-          <h2 className="text-2xl font-bold text-gray-900 font-poppins">{getModalTitle()}</h2>
+        <div className="flex items-center justify-between p-4 sm:p-6 border-b border-white/20">
+          <h2 className="text-xl sm:text-2xl font-bold text-glass-primary font-poppins">{getModalTitle()}</h2>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+            className="glass p-2 hover:glass-card rounded-full transition-all duration-300"
           >
-            <X size={24} className="text-gray-500" />
+            <X size={24} className="text-glass-secondary" />
           </button>
         </div>
 
         {/* Content */}
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           {submitStatus === 'success' ? (
             <div className="text-center py-8">
-              <CheckCircle className="mx-auto mb-4 text-green-600" size={64} />
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 font-poppins">
+              <CheckCircle className="mx-auto mb-4 text-green-500" size={48} />
+              <h3 className="text-xl sm:text-2xl font-bold text-glass-primary mb-4 font-poppins">
                 Thanks for registering! Our team will get in touch shortly.
               </h3>
               
               {buttonType === 'brochure' && (
                 <div>
-                  <p className="text-blue-800 mb-4 font-poppins">
+                  <p className="text-glass-primary mb-4 font-poppins">
                     Your brochure download should start automatically.
                   </p>
                   {showBrochureDownload && (
                     <button
                       onClick={triggerBrochureDownload}
-                      className="inline-flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-colors font-poppins"
+                      className="glass-button inline-flex items-center space-x-2 px-6 py-3 font-poppins"
                     >
                       <Download size={16} />
                       <span>If the brochure didn't download, click here</span>
@@ -155,7 +155,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, buttonType
                   {!showBrochureDownload && (
                     <button
                       onClick={triggerBrochureDownload}
-                      className="inline-flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-colors font-poppins"
+                      className="glass-button inline-flex items-center space-x-2 px-6 py-3 font-poppins"
                     >
                       <Download size={16} />
                       <span>Download Brochure Now</span>
@@ -166,7 +166,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, buttonType
               
               <button
                 onClick={onClose}
-                className="mt-6 bg-gray-600 text-white px-8 py-3 rounded-full hover:bg-gray-700 transition-colors font-poppins"
+                className="mt-6 glass border border-gray-400 text-glass-secondary px-8 py-3 hover:glass-card transition-all duration-300 font-poppins"
               >
                 Close
               </button>
@@ -175,7 +175,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, buttonType
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2 font-poppins">
+                  <label htmlFor="name" className="block text-sm font-medium text-glass-primary mb-2 font-poppins">
                     Full Name *
                   </label>
                   <input
@@ -185,12 +185,12 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, buttonType
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white/50 backdrop-blur-md border border-white/30 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:bg-white/70 transition-all duration-300 font-poppins"
+                    className="glass-input w-full px-4 py-3 font-poppins"
                     placeholder="Enter your full name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2 font-poppins">
+                  <label htmlFor="email" className="block text-sm font-medium text-glass-primary mb-2 font-poppins">
                     Email Address *
                   </label>
                   <input
@@ -200,7 +200,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, buttonType
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white/50 backdrop-blur-md border border-white/30 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:bg-white/70 transition-all duration-300 font-poppins"
+                    className="glass-input w-full px-4 py-3 font-poppins"
                     placeholder="Enter your email"
                   />
                 </div>
@@ -208,7 +208,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, buttonType
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2 font-poppins">
+                  <label htmlFor="phone" className="block text-sm font-medium text-glass-primary mb-2 font-poppins">
                     Phone Number *
                   </label>
                   <input
@@ -218,12 +218,12 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, buttonType
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white/50 backdrop-blur-md border border-white/30 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:bg-white/70 transition-all duration-300 font-poppins"
+                    className="glass-input w-full px-4 py-3 font-poppins"
                     placeholder="Enter your phone number"
                   />
                 </div>
                 <div>
-                  <label htmlFor="course" className="block text-sm font-medium text-gray-700 mb-2 font-poppins">
+                  <label htmlFor="course" className="block text-sm font-medium text-glass-primary mb-2 font-poppins">
                     Interested Course
                   </label>
                   <select
@@ -231,7 +231,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, buttonType
                     name="course"
                     value={formData.course}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/50 backdrop-blur-md border border-white/30 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:bg-white/70 transition-all duration-300 font-poppins"
+                    className="glass-input w-full px-4 py-3 font-poppins"
                   >
                     <option value="">Select a course</option>
                     {courses.map((course, index) => (
@@ -242,7 +242,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, buttonType
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2 font-poppins">
+                <label htmlFor="message" className="block text-sm font-medium text-glass-primary mb-2 font-poppins">
                   Message
                 </label>
                 <textarea
@@ -251,7 +251,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, buttonType
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full px-4 py-3 bg-white/50 backdrop-blur-md border border-white/30 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:bg-white/70 transition-all duration-300 resize-none font-poppins"
+                  className="glass-input w-full px-4 py-3 resize-none font-poppins"
                   placeholder={getDefaultMessage()}
                 />
               </div>
@@ -259,17 +259,17 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, buttonType
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-600/90 to-indigo-600/90 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-2xl hover:from-blue-700/90 hover:to-indigo-700/90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl flex items-center justify-center space-x-2 font-poppins"
+                className="glass-button w-full px-8 py-4 flex items-center justify-center space-x-2 font-poppins"
               >
                 <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
                 <Send size={20} />
               </button>
               
               {submitStatus === 'error' && (
-                <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-2xl">
+                <div className="mt-4 p-4 glass border border-red-300">
                   <div className="flex items-center">
-                    <AlertCircle className="text-red-600 mr-3" size={20} />
-                    <p className="text-red-800 font-medium font-poppins">
+                    <AlertCircle className="text-red-500 mr-3" size={20} />
+                    <p className="text-red-600 font-medium font-poppins">
                       Sorry, there was an error sending your message. Please try again or contact us directly.
                     </p>
                   </div>
