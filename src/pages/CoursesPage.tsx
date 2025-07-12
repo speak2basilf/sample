@@ -222,7 +222,7 @@ const CoursesPage: React.FC = () => {
                 </div>
 
                 {/* Right Half - Content */}
-                <div className={`w-1/2 p-6 flex flex-col justify-between bg-gradient-to-br ${getColorClasses(course.color).replace('hover:', '').replace('from-', 'from-').replace('to-', 'to-').split(' ')[0]} relative`}>
+                <div className="w-1/2 p-6 flex flex-col justify-between bg-gradient-to-br from-blue-600 to-blue-700 relative">
                   {/* Background Pattern */}
                   <div className="absolute inset-0 opacity-10">
                     <div className="absolute top-4 right-4 w-20 h-20 border-2 border-white rounded-full"></div>
@@ -288,7 +288,7 @@ const CoursesPage: React.FC = () => {
 
                   {/* Action Button */}
                   <div className="relative z-10">
-                    <button className="w-full bg-white/20 backdrop-blur-md border border-white/30 text-white px-4 py-3 rounded-2xl hover:bg-white/30 hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2 text-sm font-medium">
+                    <button className="w-full bg-white text-blue-600 px-4 py-3 rounded-full hover:bg-gray-100 hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2 text-sm font-medium font-semibold">
                       <span>View Details</span>
                       <ArrowRight size={16} />
                     </button>
@@ -297,7 +297,7 @@ const CoursesPage: React.FC = () => {
               </div>
 
               {course.popular && (
-                <div className="absolute top-4 left-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium z-20">
+                <div className="absolute top-4 left-4 bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-bold shadow-lg z-20">
                   Most Popular
                 </div>
               )}

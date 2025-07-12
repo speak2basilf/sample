@@ -302,7 +302,10 @@ const ClinicalSASCourse: React.FC = () => {
       {showFloatingSidebar && (
         <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50 space-y-3">
           {/* Contact Form */}
-          <div className="bg-white/90 backdrop-blur-lg border border-white/20 rounded-xl p-3 shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group">
+          <div 
+            onClick={() => openContactModal('contact')}
+            className="bg-white/90 backdrop-blur-lg border border-white/20 rounded-xl p-3 shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group"
+          >
             <div className="text-center">
               <MessageCircle className="text-blue-600 mx-auto mb-1 group-hover:scale-110 transition-transform" size={20} />
               <p className="text-xs font-medium text-gray-700">Contact</p>
@@ -310,7 +313,10 @@ const ClinicalSASCourse: React.FC = () => {
           </div>
 
           {/* Download Brochure */}
-          <div className="bg-white/90 backdrop-blur-lg border border-white/20 rounded-xl p-3 shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group">
+          <div 
+            onClick={() => openContactModal('brochure')}
+            className="bg-white/90 backdrop-blur-lg border border-white/20 rounded-xl p-3 shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group"
+          >
             <div className="text-center">
               <Download className="text-green-600 mx-auto mb-1 group-hover:scale-110 transition-transform" size={20} />
               <p className="text-xs font-medium text-gray-700">Brochure</p>
@@ -318,7 +324,10 @@ const ClinicalSASCourse: React.FC = () => {
           </div>
 
           {/* Schedule Call */}
-          <div className="bg-white/90 backdrop-blur-lg border border-white/20 rounded-xl p-3 shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group">
+          <div 
+            onClick={() => openContactModal('counselling')}
+            className="bg-white/90 backdrop-blur-lg border border-white/20 rounded-xl p-3 shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group"
+          >
             <div className="text-center">
               <Phone className="text-orange-600 mx-auto mb-1 group-hover:scale-110 transition-transform" size={20} />
               <p className="text-xs font-medium text-gray-700">Call</p>

@@ -175,7 +175,10 @@ const MedicalCodingCourse: React.FC = () => {
       {showFloatingSidebar && (
         <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 space-y-4">
           {/* Contact Form */}
-          <div className="bg-white/90 backdrop-blur-lg border border-white/20 rounded-2xl p-4 shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group">
+          <div 
+            onClick={() => openContactModal('contact')}
+            className="bg-white/90 backdrop-blur-lg border border-white/20 rounded-2xl p-4 shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group"
+          >
             <div className="text-center">
               <MessageCircle className="text-blue-600 mx-auto mb-2 group-hover:scale-110 transition-transform" size={24} />
               <p className="text-xs font-medium text-gray-700">Contact Form</p>
@@ -183,7 +186,10 @@ const MedicalCodingCourse: React.FC = () => {
           </div>
 
           {/* Download Brochure */}
-          <div className="bg-white/90 backdrop-blur-lg border border-white/20 rounded-2xl p-4 shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group">
+          <div 
+            onClick={() => openContactModal('brochure')}
+            className="bg-white/90 backdrop-blur-lg border border-white/20 rounded-2xl p-4 shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group"
+          >
             <div className="text-center">
               <Download className="text-green-600 mx-auto mb-2 group-hover:scale-110 transition-transform" size={24} />
               <p className="text-xs font-medium text-gray-700">Download Brochure</p>
@@ -191,7 +197,10 @@ const MedicalCodingCourse: React.FC = () => {
           </div>
 
           {/* Schedule Call */}
-          <div className="bg-white/90 backdrop-blur-lg border border-white/20 rounded-2xl p-4 shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group">
+          <div 
+            onClick={() => openContactModal('counselling')}
+            className="bg-white/90 backdrop-blur-lg border border-white/20 rounded-2xl p-4 shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group"
+          >
             <div className="text-center">
               <Phone className="text-orange-600 mx-auto mb-2 group-hover:scale-110 transition-transform" size={24} />
               <p className="text-xs font-medium text-gray-700">Schedule Call</p>
