@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage Images -->
+  <url>
+    <loc>https://cliniglobal.com/</loc>
+    <image:image>
+      <image:loc>https://cliniglobal.com/images/clinical-research-hero-laboratory.jpg</image:loc>
+      <image:caption>State-of-the-art clinical research laboratory for professional healthcare training at CliniGlobal Research Institute</image:caption>
+      <image:title>Clinical Research Training Laboratory - CliniGlobal</image:title>
+      <image:license>https://cliniglobal.com/image-license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://cliniglobal.com/images/cliniglobal-logo-healthcare-institute.png</image:loc>
+      <image:caption>CliniGlobal Research Institute official logo - Leading healthcare training and education provider</image:caption>
+      <image:title>CliniGlobal Research Institute Logo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cliniglobal.com/images/healthcare-professionals-team-faculty.jpg</image:loc>
+      <image:caption>Expert healthcare professionals and faculty team at CliniGlobal Research Institute</image:caption>
+      <image:title>CliniGlobal Faculty and Healthcare Experts</image:title>
+    </image:image>
+  </url>
+
+  <!-- Clinical Research Course Page -->
+  <url>
+    <loc>https://cliniglobal.com/courses/clinical-research</loc>
+    <image:image>
+      <image:loc>https://cliniglobal.com/images/clinical-research-training-classroom.jpg</image:loc>
+      <image:caption>Clinical research training classroom with students learning GCP guidelines and regulatory compliance</image:caption>
+      <image:title>Clinical Research Training Program - CliniGlobal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cliniglobal.com/images/clinical-trial-management-training.jpg</image:loc>
+      <image:caption>Hands-on clinical trial management training session for pharmaceutical industry careers</image:caption>
+      <image:title>Clinical Trial Management Training</image:title>
+    </image:image>
+  </url>
+
+  <!-- Medical Coding Course Page -->
+  <url>
+    <loc>https://cliniglobal.com/courses/medical-coding</loc>
+    <image:image>
+      <image:loc>https://cliniglobal.com/images/medical-coding-training-session.jpg</image:loc>
+      <image:caption>Medical coding training session focusing on ICD-10, CPT, and HCPCS coding systems</image:caption>
+      <image:title>Medical Coding Training Program - CliniGlobal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cliniglobal.com/images/healthcare-documentation-billing.jpg</image:loc>
+      <image:caption>Healthcare documentation and billing training for medical coding professionals</image:caption>
+      <image:title>Healthcare Documentation and Billing Training</image:title>
+    </image:image>
+  </url>
+
+  <!-- Clinical SAS Course Page -->
+  <url>
+    <loc>https://cliniglobal.com/courses/clinical-sas</loc>
+    <image:image>
+      <image:loc>https://cliniglobal.com/images/clinical-sas-programming-training.jpg</image:loc>
+      <image:caption>Clinical SAS programming training for statistical analysis and regulatory reporting</image:caption>
+      <image:title>Clinical SAS Programming Training - CliniGlobal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cliniglobal.com/images/statistical-analysis-dashboard.jpg</image:loc>
+      <image:caption>Statistical analysis dashboard and data visualization training for clinical research</image:caption>
+      <image:title>Statistical Analysis and Data Visualization Training</image:title>
+    </image:image>
+  </url>
+
+  <!-- Facilities Page -->
+  <url>
+    <loc>https://cliniglobal.com/learning-centers</loc>
+    <image:image>
+      <image:loc>https://cliniglobal.com/images/bangalore-training-facility.jpg</image:loc>
+      <image:caption>CliniGlobal Bangalore training facility with modern classrooms and laboratory equipment</image:caption>
+      <image:title>CliniGlobal Bangalore Training Facility</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cliniglobal.com/images/hyderabad-learning-center.jpg</image:loc>
+      <image:caption>CliniGlobal Hyderabad learning center offering comprehensive healthcare training programs</image:caption>
+      <image:title>CliniGlobal Hyderabad Learning Center</image:title>
+    </image:image>
+  </url>
+
+  <!-- Placements Page -->
+  <url>
+    <loc>https://cliniglobal.com/placements</loc>
+    <image:image>
+      <image:loc>https://cliniglobal.com/images/placement-success-stories.jpg</image:loc>
+      <image:caption>Successful CliniGlobal graduates working in pharmaceutical and healthcare companies</image:caption>
+      <image:title>CliniGlobal Placement Success Stories</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cliniglobal.com/images/industry-partner-companies.jpg</image:loc>
+      <image:caption>Leading pharmaceutical and healthcare companies partnering with CliniGlobal for recruitment</image:caption>
+      <image:title>CliniGlobal Industry Partners</image:title>
+    </image:image>
+  </url>
+
+</urlset>
