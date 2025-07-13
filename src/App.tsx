@@ -20,6 +20,8 @@ import AccreditationsPage from './pages/AccreditationsPage';
 import LearningCentersPage from './pages/LearningCentersPage';
 import BlogPage from './pages/BlogPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsConditionsPage from './pages/TermsConditionsPage';
+import RefundPolicyPage from './pages/RefundPolicyPage';
 
 // Main Home Page Component
 const HomePage: React.FC = () => {
@@ -95,6 +97,16 @@ function App() {
           <Route path="/privacy-policy" element={
             <CoursePageLayout>
               <PrivacyPolicyPage />
+            </CoursePageLayout>
+          } />
+          <Route path="/terms-conditions" element={
+            <CoursePageLayout>
+              <TermsConditionsPage />
+            </CoursePageLayout>
+          } />
+          <Route path="/refund-policy" element={
+            <CoursePageLayout>
+              <RefundPolicyPage />
             </CoursePageLayout>
           } />
           {/* Placeholder routes for other courses */}

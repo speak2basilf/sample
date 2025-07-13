@@ -110,12 +110,25 @@ const Footer: React.FC = () => {
                 </span>
               </div>
             </div>
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-4 md:mt-0">
-              <a href="/privacy-policy" className="text-glass-white opacity-80 hover:opacity-100 hover:text-blue-300 text-sm transition-all duration-300">Privacy Policy</a>
-              <a href="#" className="text-glass-white opacity-80 hover:opacity-100 hover:text-blue-300 text-sm transition-all duration-300">Terms & Conditions</a>
-              <a href="#" className="text-glass-white opacity-80 hover:opacity-100 hover:text-blue-300 text-sm transition-all duration-300">Sitemap</a>
-              <a href="#" className="text-glass-white opacity-80 hover:opacity-100 hover:text-blue-300 text-sm transition-all duration-300">Accessibility Statement</a>
-              <a href="#" className="text-glass-white opacity-80 hover:opacity-100 hover:text-blue-300 text-sm transition-all duration-300">Disclaimer</a>
+            <div className="flex flex-wrap justify-center gap-3 mt-4 md:mt-0">
+              <button 
+                onClick={() => window.location.href = '/privacy-policy'}
+                className="bg-white text-gray-800 px-4 py-2 rounded-lg text-sm font-medium hover:shadow-md hover:bg-gray-50 transition-all duration-300 hover:scale-105"
+              >
+                Privacy Policy
+              </button>
+              <button 
+                onClick={() => window.location.href = '/terms-conditions'}
+                className="bg-white text-gray-800 px-4 py-2 rounded-lg text-sm font-medium hover:shadow-md hover:bg-gray-50 transition-all duration-300 hover:scale-105"
+              >
+                Terms & Conditions
+              </button>
+              <button 
+                onClick={() => window.location.href = '/refund-policy'}
+                className="bg-white text-gray-800 px-4 py-2 rounded-lg text-sm font-medium hover:shadow-md hover:bg-gray-50 transition-all duration-300 hover:scale-105"
+              >
+                Refund Policy
+              </button>
             </div>
           </div>
         </div>

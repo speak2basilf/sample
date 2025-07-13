@@ -193,6 +193,28 @@ const Header: React.FC = () => {
                   </span>
                 </div>
               </div>
+              
+              {/* Policy Buttons */}
+              <div className="flex items-center space-x-2">
+                <button 
+                  onClick={() => navigate('/privacy-policy')}
+                  className="bg-white text-gray-800 px-3 py-1.5 rounded-lg text-xs font-medium hover:shadow-md transition-all duration-300 hover:scale-105"
+                >
+                  Privacy Policy
+                </button>
+                <button 
+                  onClick={() => navigate('/terms-conditions')}
+                  className="bg-white text-gray-800 px-3 py-1.5 rounded-lg text-xs font-medium hover:shadow-md transition-all duration-300 hover:scale-105"
+                >
+                  Terms & Conditions
+                </button>
+                <button 
+                  onClick={() => navigate('/refund-policy')}
+                  className="bg-white text-gray-800 px-3 py-1.5 rounded-lg text-xs font-medium hover:shadow-md transition-all duration-300 hover:scale-105"
+                >
+                  Refund Policy
+                </button>
+              </div>
             </div>
           </div>
         </div>
